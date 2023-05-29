@@ -2,7 +2,9 @@ const Product = require("../models/Product")
 const asyncHandler = require("../utils/asyncHandler")
 
 const getAllProducts = asyncHandler(async (req, res) => {
+    console.log('get all products')
     const products = await Product.find().exec()
+
     res.status(200).json({products})
 })
 

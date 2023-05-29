@@ -19,7 +19,10 @@ const productSchema = new Schema({
     },
     company: {
         type: String,
-        required: [true, 'Product company is required']
+        enum: {
+            values: ['ikea', 'liddy', 'caressa', 'marcos'],
+            message: '{VALUE} is not supported'
+        }
     },
     createdAt: {
         type: Date,
